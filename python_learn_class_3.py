@@ -20,3 +20,17 @@ class User():
 user_0=User('ling','jianhang','19','176')
 user_0.describle()
 user_0.gereet_user()
+
+class Admin(User):
+    """继承USER"""
+    def __init__(self,first_name,last_name,age,length):
+        """初始化父类的属性"""
+        super().__init__(first_name,last_name,age,length)
+        self.privileges=['can add post','can delect post','can ban user']
+
+    def show_privileges(self):
+        for power in self.privileges:
+         print("管理员的作用有"+power)
+
+admin=Admin('Fang','jianping',8,176)
+admin.show_privileges()
